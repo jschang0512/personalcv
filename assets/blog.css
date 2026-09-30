@@ -253,3 +253,22 @@ html[data-theme="dark"] .chip.active { background: var(--mint); border-color: va
   .site-foot .wrap { justify-content: center; text-align: center; }
   .empty { padding: 56px 0; }
 }
+
+/* ---------- Motion ---------- */
+.progress { position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 60; pointer-events: none; transform-origin: 0 50%; transform: scaleX(0); background: linear-gradient(90deg, var(--mint), #7ff0d8); }
+@keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+.head-body > * { animation: rise .7s cubic-bezier(.2,.7,.2,1) both; }
+.head-body > :nth-child(2) { animation-delay: .08s; }
+.head-body > :nth-child(3) { animation-delay: .16s; }
+.head-body > :nth-child(4) { animation-delay: .24s; }
+.head-body > :nth-child(5) { animation-delay: .32s; }
+.cover { animation: rise .8s .3s cubic-bezier(.2,.7,.2,1) both; }
+.reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s cubic-bezier(.2,.7,.2,1), transform .6s cubic-bezier(.2,.7,.2,1); transition-delay: var(--d, 0s); }
+.reveal.in { opacity: 1; transform: none; }
+html.theme-anim *, html.theme-anim *::before, html.theme-anim *::after { transition: background-color .45s ease, color .45s ease, border-color .45s ease, fill .45s ease, box-shadow .45s ease !important; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .reveal { opacity: 1; transform: none; }
+  .progress { display: none; }
+}
