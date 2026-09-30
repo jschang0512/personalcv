@@ -61,7 +61,7 @@ html[data-lang="zh"] .zh, html[data-lang="en"] .en, html[data-lang="ja"] .ja { d
 html[data-theme="dark"] .icon-sun { display: block; }
 html[data-theme="dark"] .icon-moon { display: none; }
 
-.head-body { padding: 40px 0 56px; }
+.head-body { padding-top: 40px; padding-bottom: 56px; }
 .kicker { font-family: var(--mono); font-size: 12.5px; color: var(--mint); letter-spacing: .04em; }
 .site-head h1 { font-size: 44px; font-weight: 900; line-height: 1.15; letter-spacing: -.02em; margin-top: 10px; }
 .site-head .lead { margin-top: 14px; font-size: 16.5px; color: rgba(255,255,255,.78); max-width: 640px; }
@@ -140,7 +140,7 @@ html[data-theme="dark"] .icon-moon { display: none; }
   .bar { flex-wrap: wrap; row-gap: 12px; }
   .bar nav { order: 3; width: 100%; }
   .site-head h1 { font-size: 32px; }
-  .head-body { padding: 24px 0 44px; }
+  .head-body { padding-top: 24px; padding-bottom: 44px; }
   .post-card { grid-template-columns: 1fr; gap: 6px; padding: 20px; }
   .prose { font-size: 16px; padding-top: 36px; }
   .prose h2 { font-size: 22px; }
@@ -238,3 +238,18 @@ html[data-theme="dark"] .chip.active { background: var(--mint); border-color: va
 
 /* Footer copyright doubles as an unstyled link to the CMS */
 .quiet-link, .quiet-link:hover { color: inherit; text-decoration: none; cursor: text; }
+
+/* ---------- Phone: app-style header and lists (left-aligned reading content) ---------- */
+@media (max-width: 720px) {
+  .bar { row-gap: 8px; }
+  .controls { margin-left: auto; }
+  .bar nav { order: -1; width: auto; gap: 18px; }
+  .site-head .meta { gap: 2px 14px; }
+  .site-head .meta .dot { display: none; }
+  .filters { flex-wrap: nowrap; overflow-x: auto; margin: 0 -18px; padding: 28px 18px 4px; }
+  .filters .chip, .filters .tag-filter { flex-shrink: 0; }
+  .article-foot { gap: 16px; }
+  .refs, .attachments { padding-top: 24px; }
+  .site-foot .wrap { justify-content: center; text-align: center; }
+  .empty { padding: 56px 0; }
+}
