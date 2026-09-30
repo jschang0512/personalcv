@@ -3,9 +3,11 @@
 # Multilingual fields have 中文 / English / 日本語; leave English or 日本語 empty to reuse 中文.
 # Generated without components so every list shows an "Add" button.
 media:
-  input: media
-  output: media
-  categories: [image]
+  - name: images
+    input: media
+    output: /personalcv/media
+    extensions: [jpg, jpeg, png, webp, gif, svg]
+    rename: safe
 content:
   - name: site
     label: "網站內容"
@@ -73,6 +75,9 @@ content:
           - name: photo
             label: "大頭照"
             type: image
+            options:
+              media: images
+              path: media/profile
           - name: email
             label: "Email（按「聯絡我」會複製）"
             type: string
@@ -591,6 +596,49 @@ content:
                   - name: ja
                     label: "日本語"
                     type: string
+          - name: blog
+            label: "最新文章區塊"
+            type: object
+            fields:
+              - name: nav
+                label: "選單文字"
+                type: object
+                fields:
+                  - name: zh
+                    label: "中文"
+                    type: string
+                  - name: en
+                    label: English
+                    type: string
+                  - name: ja
+                    label: "日本語"
+                    type: string
+              - name: title
+                label: "標題"
+                type: object
+                fields:
+                  - name: zh
+                    label: "中文"
+                    type: string
+                  - name: en
+                    label: English
+                    type: string
+                  - name: ja
+                    label: "日本語"
+                    type: string
+              - name: subtitle
+                label: "副標（選填）"
+                type: object
+                fields:
+                  - name: zh
+                    label: "中文"
+                    type: string
+                  - name: en
+                    label: English
+                    type: string
+                  - name: ja
+                    label: "日本語"
+                    type: string
       - name: footer
         label: "頁尾"
         type: object
@@ -611,3 +659,58 @@ content:
           - name: updated
             label: "最後更新日期"
             type: date
+  - name: posts
+    label: "部落格文章"
+    type: collection
+    path: _posts
+    format: yaml-frontmatter
+    filename:
+      template: "{year}-{month}-{day}-{fields.slug}.md"
+      field: create
+    view:
+      fields: [title, date]
+      primary: title
+      sort: [date, title]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: "標題"
+        type: string
+        required: true
+      - name: slug
+        label: "網址代稱"
+        type: string
+        required: true
+        pattern: "^[a-z0-9]+(-[a-z0-9]+)*$"
+        description: "只能用小寫英文、數字和連字號，例如 target-trial-emulation-intro。會成為文章網址的一部分，建立後請勿更改。"
+      - name: date
+        label: "發布日期"
+        type: date
+        required: true
+      - name: description
+        label: "摘要"
+        type: text
+        description: "顯示在文章列表與分享預覽；留空會自動擷取內文開頭"
+      - name: tags
+        label: "標籤"
+        type: string
+        list: true
+      - name: cover
+        label: "封面圖（選填）"
+        type: image
+        options:
+          media: images
+          path: media/blog
+      - name: math
+        label: "包含數學公式"
+        type: boolean
+        description: "勾選後可用 $$ 公式 $$ 撰寫 LaTeX 數學式"
+      - name: body
+        label: "內文"
+        type: rich-text
+        options:
+          format: markdown
+          media: images
+          path: media/blog

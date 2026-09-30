@@ -1,0 +1,30 @@
+title: Chia-Sung (Bruce) Chang
+description: Pharmacoepidemiology & Real-World Evidence
+author: Chia-Sung (Bruce) Chang
+url: https://jschang0512.github.io
+baseurl: /personalcv
+timezone: Asia/Taipei
+lang: zh-Hant
+
+permalink: /blog/:year/:month/:day/:title/
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  math_engine: mathjax
+  syntax_highlighter_opts:
+    disable: true
+
+plugins:
+  - jekyll-feed
+
+feed:
+  path: blog/feed.xml
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post

@@ -1,0 +1,17 @@
+<div class="bar">
+  <nav aria-label="Site">
+    <a href="{{ '/' | relative_url }}"><span class="zh">← 首頁</span><span class="en">← Home</span><span class="ja">← ホーム</span></a>
+    <a href="{{ '/blog/' | relative_url }}"{% if include.active == 'blog' %} class="active"{% endif %}><span class="zh">文章</span><span class="en">Blog</span><span class="ja">ブログ</span></a>
+  </nav>
+  <div class="controls">
+    <button type="button" class="ctl" onclick="toggleTheme()" aria-label="Toggle dark mode">
+      <svg class="icon-moon" viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-3.03 0-5.5-2.47-5.5-5.5 0-1.82.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zM11 1h2v3h-2zM11 20h2v3h-2zM1 11h3v2H1zM20 11h3v2h-3zM4.22 5.64l1.42-1.42 2.12 2.12-1.42 1.42zM16.24 17.66l1.42-1.42 2.12 2.12-1.42 1.42zM4.22 18.36l2.12-2.12 1.42 1.42-2.12 2.12zM16.24 6.34l2.12-2.12 1.42 1.42-2.12 2.12z"/></svg>
+    </button>
+    <div class="langs" role="group" aria-label="Language">
+      <button type="button" data-lang-btn="zh" onclick="setLang('zh')">中</button>
+      <button type="button" data-lang-btn="en" onclick="setLang('en')">EN</button>
+      <button type="button" data-lang-btn="ja" onclick="setLang('ja')">日</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" data-lang="zh" data-theme="light">
+<head>
+{% include blog-head.html %}
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    {% include blog-bar.html active="blog" %}
+  </div>
+  <div class="narrow head-body">
+    <time class="kicker" datetime="{{ page.date | date_to_xmlschema }}"><span class="zh">{{ page.date | date: "%Y 年 %-m 月 %-d 日" }}</span><span class="en">{{ page.date | date: "%B %-d, %Y" }}</span><span class="ja">{{ page.date | date: "%Y 年 %-m 月 %-d 日" }}</span></time>
+    <h1>{{ page.title }}</h1>
+    {% if page.description %}<p class="lead">{{ page.description }}</p>{% endif %}
+    {% if page.tags.size > 0 %}
+    <div class="meta">{% for tag in page.tags %}<span class="tag">{{ tag }}</span>{% endfor %}</div>
+    {% endif %}
+  </div>
+</header>
+
+<main class="narrow">
+  {% if page.cover %}
+  {% include media-url.html path=page.cover %}
+  <div class="cover"><img src="{{ media_url }}" alt=""></div>
+  {% endif %}
+
+  <article class="prose">
+    {{ content }}
+  </article>
+
+  <div class="article-foot">
+    <a class="back" href="{{ '/blog/' | relative_url }}"><span class="zh">← 所有文章</span><span class="en">← All posts</span><span class="ja">← 記事一覧</span></a>
+    {% if page.tags.size > 0 %}<div class="tags">{% for tag in page.tags %}<span class="tag">{{ tag }}</span>{% endfor %}</div>{% endif %}
+  </div>
+
+  {% if page.previous or page.next %}
+  <nav class="pager" aria-label="More posts">
+    {% if page.previous %}
+    <a class="prev" href="{{ page.previous.url | relative_url }}"><small><span class="zh">上一篇</span><span class="en">Previous</span><span class="ja">前の記事</span></small><span class="t">{{ page.previous.title }}</span></a>
+    {% endif %}
+    {% if page.next %}
+    <a class="next" href="{{ page.next.url | relative_url }}"><small><span class="zh">下一篇</span><span class="en">Next</span><span class="ja">次の記事</span></small><span class="t">{{ page.next.title }}</span></a>
+    {% endif %}
+  </nav>
+  {% endif %}
+</main>
+
+{% include blog-foot.html %}
+</body>
+</html>

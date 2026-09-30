@@ -1,61 +1,159 @@
 {
   "profile": {
-    "name": { "zh": "張家菘", "en": "Chia-Sung (Bruce) Chang", "ja": "張家菘" },
-    "subtitle": { "zh": "Chia-Sung (Bruce) Chang, B.S.Pharm, R.Ph.", "en": "張家菘 · B.S.Pharm, R.Ph.", "ja": "Bruce Chang · 薬剤師" },
-    "badge": { "zh": "藥物流行病學 · 真實世界證據", "en": "Pharmacoepidemiology · Real-World Evidence", "ja": "薬剤疫学 · リアルワールドエビデンス" },
+    "name": {
+      "zh": "張家菘",
+      "en": "Chia-Sung (Bruce) Chang",
+      "ja": "張家菘"
+    },
+    "subtitle": {
+      "zh": "Chia-Sung (Bruce) Chang, B.S.Pharm, R.Ph.",
+      "en": "張家菘 · B.S.Pharm, R.Ph.",
+      "ja": "Bruce Chang · 薬剤師"
+    },
+    "badge": {
+      "zh": "藥物流行病學 · 真實世界證據",
+      "en": "Pharmacoepidemiology · Real-World Evidence",
+      "ja": "薬剤疫学 · リアルワールドエビデンス"
+    },
     "pitch": {
       "zh": "中華民國執業藥師、臺北醫學大學臨床醫學碩士生。以 **真實世界證據** 與 **實證統合** 回答「藥物在真實病人身上究竟表現如何」。",
       "en": "Licensed pharmacist and M.Sc. candidate in Clinical Medicine at Taipei Medical University, using **real-world evidence** and **evidence synthesis** to ask how drugs actually perform in real patients.",
       "ja": "中華民国薬剤師、台北医学大学臨床医学修士課程在籍。**リアルワールドエビデンス**と**エビデンス統合**により、「実際の患者で薬はどう効くのか」を探究しています。"
     },
-    "photo": "media/photo.jpg",
+    "photo": "/personalcv/media/profile/photo.jpg",
     "email": "js.chang0512@gmail.com",
     "orcid": "https://orcid.org/0009-0002-4680-8091",
     "linkedin": "https://www.linkedin.com/in/jschang0512",
     "toolkit": "https://jschang0512.github.io/research-toolkit/"
   },
-
   "stats": [
     {
       "value": "R.Ph.",
-      "label": { "zh": "中華民國執業藥師", "en": "Registered Pharmacist", "ja": "中華民国薬剤師" },
-      "detail": { "zh": "北醫附醫藥劑部", "en": "TMU Hospital Pharmacy", "ja": "台北医学大学附属病院" }
+      "label": {
+        "zh": "中華民國執業藥師",
+        "en": "Registered Pharmacist",
+        "ja": "中華民国薬剤師"
+      },
+      "detail": {
+        "zh": "北醫附醫藥劑部",
+        "en": "TMU Hospital Pharmacy",
+        "ja": "台北医学大学附属病院"
+      }
     },
     {
       "value": "M.Sc.",
-      "label": { "zh": "臨床醫學（在學）", "en": "Clinical Medicine (current)", "ja": "臨床医学（在籍）" },
-      "detail": { "zh": "健康科技評估與轉譯資訊", "en": "HTA & Translational Informatics", "ja": "医療技術評価・情報学" }
+      "label": {
+        "zh": "臨床醫學（在學）",
+        "en": "Clinical Medicine (current)",
+        "ja": "臨床医学（在籍）"
+      },
+      "detail": {
+        "zh": "健康科技評估與轉譯資訊",
+        "en": "HTA & Translational Informatics",
+        "ja": "医療技術評価・情報学"
+      }
     },
     {
       "value": "RWE",
-      "label": { "zh": "藥物流行病學", "en": "Pharmacoepidemiology", "ja": "薬剤疫学" },
-      "detail": { "zh": "大型資料庫・試驗模擬", "en": "Claims data · Trial emulation", "ja": "大規模データ・因果推論" }
+      "label": {
+        "zh": "藥物流行病學",
+        "en": "Pharmacoepidemiology",
+        "ja": "薬剤疫学"
+      },
+      "detail": {
+        "zh": "大型資料庫・試驗模擬",
+        "en": "Claims data · Trial emulation",
+        "ja": "大規模データ・因果推論"
+      }
     }
   ],
-
   "sections": {
     "research": {
-      "nav": { "zh": "研究方向", "en": "Research", "ja": "研究" },
-      "title": { "zh": "研究方向", "en": "Research Focus", "ja": "研究焦点" },
-      "subtitle": { "zh": "從統合分析到真實世界數據研究", "en": "From meta-analysis to real-world data research", "ja": "メタアナリシスからリアルワールドデータ研究へ" }
+      "nav": {
+        "zh": "研究方向",
+        "en": "Research",
+        "ja": "研究"
+      },
+      "title": {
+        "zh": "研究方向",
+        "en": "Research Focus",
+        "ja": "研究焦点"
+      },
+      "subtitle": {
+        "zh": "從統合分析到真實世界數據研究",
+        "en": "From meta-analysis to real-world data research",
+        "ja": "メタアナリシスからリアルワールドデータ研究へ"
+      }
     },
     "cv": {
-      "nav": { "zh": "學經歷", "en": "Education & Experience", "ja": "学歴・経歴" },
-      "title": { "zh": "學歷與經歷", "en": "Education & Experience", "ja": "学歴・経歴" },
-      "subtitle": { "zh": "", "en": "", "ja": "" }
+      "nav": {
+        "zh": "學經歷",
+        "en": "Education & Experience",
+        "ja": "学歴・経歴"
+      },
+      "title": {
+        "zh": "學歷與經歷",
+        "en": "Education & Experience",
+        "ja": "学歴・経歴"
+      },
+      "subtitle": {
+        "zh": "",
+        "en": "",
+        "ja": ""
+      }
     },
     "publications": {
-      "nav": { "zh": "學術著作", "en": "Publications", "ja": "論文" },
-      "title": { "zh": "學術著作", "en": "Publications", "ja": "学術論文" },
-      "subtitle": { "zh": "系統性回顧、統合分析與真實世界世代研究", "en": "Systematic reviews, meta-analyses, and real-world cohort studies", "ja": "システマティックレビュー・メタアナリシス・リアルワールドコホート研究" }
+      "nav": {
+        "zh": "學術著作",
+        "en": "Publications",
+        "ja": "論文"
+      },
+      "title": {
+        "zh": "學術著作",
+        "en": "Publications",
+        "ja": "学術論文"
+      },
+      "subtitle": {
+        "zh": "系統性回顧、統合分析與真實世界世代研究",
+        "en": "Systematic reviews, meta-analyses, and real-world cohort studies",
+        "ja": "システマティックレビュー・メタアナリシス・リアルワールドコホート研究"
+      }
     },
     "awards": {
-      "nav": { "zh": "獎項活動", "en": "Awards", "ja": "受賞・活動" },
-      "title": { "zh": "獎項與學術活動", "en": "Awards & Academic Activities", "ja": "受賞・学術活動" },
-      "subtitle": { "zh": "", "en": "", "ja": "" }
+      "nav": {
+        "zh": "獎項活動",
+        "en": "Awards",
+        "ja": "受賞・活動"
+      },
+      "title": {
+        "zh": "獎項與學術活動",
+        "en": "Awards & Academic Activities",
+        "ja": "受賞・学術活動"
+      },
+      "subtitle": {
+        "zh": "",
+        "en": "",
+        "ja": ""
+      }
+    },
+    "blog": {
+      "nav": {
+        "zh": "文章",
+        "en": "Blog",
+        "ja": "ブログ"
+      },
+      "title": {
+        "zh": "最新文章",
+        "en": "Latest Writing",
+        "ja": "最新の記事"
+      },
+      "subtitle": {
+        "zh": "研究筆記與觀點",
+        "en": "Research notes and perspectives",
+        "ja": "研究ノートと考察"
+      }
     }
   },
-
   "research": {
     "summary": {
       "zh": "藥師與臨床醫學碩士生，研究工作聚焦於**真實世界證據（Real-World Evidence, RWE）**與**實證統合（Evidence Synthesis）**的交會點。方法學涵蓋系統性回顧與統合分析、貝氏網絡統合分析（Bayesian Network Meta-Analysis），以及目標試驗模擬（Target Trial Emulation），應用領域包含腫瘤學（HR+/HER2- 乳癌之 CDK4/6 抑制劑）、移植醫學（以 everolimus 為基礎之免疫抑制方案）與神經退化疾病。未來將以大型理賠與登錄資料庫持續延伸此研究方向。",
@@ -63,117 +161,304 @@
       "ja": "薬剤師であり臨床医学修士課程の大学院生として、**リアルワールドエビデンス（RWE）**と**エビデンス統合**が交わる領域を研究している。方法論としてはシステマティックレビュー・メタアナリシス、ベイズ・ネットワークメタアナリシス、ターゲット・トライアル・エミュレーションを扱い、腫瘍学（HR+/HER2- 乳がんにおける CDK4/6 阻害薬）、移植医学（everolimus を基盤とした免疫抑制療法）、神経変性疾患を対象領域としている。今後は大規模な保険請求・登録データベースを用いて、この研究をさらに発展させていく。"
     },
     "methods": [
-      { "zh": "Real-World Evidence", "en": "", "ja": "" },
-      { "zh": "Meta-Analysis", "en": "", "ja": "" },
-      { "zh": "Bayesian NMA", "en": "", "ja": "" },
-      { "zh": "Target Trial Emulation", "en": "", "ja": "" }
+      {
+        "zh": "Real-World Evidence",
+        "en": "",
+        "ja": ""
+      },
+      {
+        "zh": "Meta-Analysis",
+        "en": "",
+        "ja": ""
+      },
+      {
+        "zh": "Bayesian NMA",
+        "en": "",
+        "ja": ""
+      },
+      {
+        "zh": "Target Trial Emulation",
+        "en": "",
+        "ja": ""
+      }
     ],
     "areas": [
-      { "zh": "腫瘤學（CDK4/6 抑制劑）", "en": "Oncology (CDK4/6)", "ja": "腫瘍学（CDK4/6）" },
-      { "zh": "移植醫學（Everolimus）", "en": "Transplant Medicine", "ja": "移植医学" },
-      { "zh": "神經退化疾病", "en": "Neurodegenerative Disease", "ja": "神経変性疾患" }
+      {
+        "zh": "腫瘤學（CDK4/6 抑制劑）",
+        "en": "Oncology (CDK4/6)",
+        "ja": "腫瘍学（CDK4/6）"
+      },
+      {
+        "zh": "移植醫學（Everolimus）",
+        "en": "Transplant Medicine",
+        "ja": "移植医学"
+      },
+      {
+        "zh": "神經退化疾病",
+        "en": "Neurodegenerative Disease",
+        "ja": "神経変性疾患"
+      }
     ]
   },
-
   "education": [
     {
-      "title": { "zh": "臨床醫學碩士（在學）", "en": "M.Sc. in Clinical Medicine", "ja": "臨床医学修士課程" },
-      "dates": { "zh": "2025 – 2027", "en": "", "ja": "" },
-      "institution": { "zh": "臺北醫學大學 臨床醫學研究所", "en": "Taipei Medical University · Graduate Institute of Clinical Medicine", "ja": "台北医学大学 臨床医学研究所" },
-      "note": { "zh": "", "en": "", "ja": "" },
-      "certificate": { "zh": "學程證書：健康科技評估與轉譯資訊學", "en": "Program Certificate: HTA & Translational Informatics", "ja": "プログラム修了証：医療技術評価・トランスレーショナル情報学" }
+      "title": {
+        "zh": "臨床醫學碩士（在學）",
+        "en": "M.Sc. in Clinical Medicine",
+        "ja": "臨床医学修士課程"
+      },
+      "dates": {
+        "zh": "2025 – 2027",
+        "en": "",
+        "ja": ""
+      },
+      "institution": {
+        "zh": "臺北醫學大學 臨床醫學研究所",
+        "en": "Taipei Medical University · Graduate Institute of Clinical Medicine",
+        "ja": "台北医学大学 臨床医学研究所"
+      },
+      "note": {
+        "zh": "",
+        "en": "",
+        "ja": ""
+      },
+      "certificate": {
+        "zh": "學程證書：健康科技評估與轉譯資訊學",
+        "en": "Program Certificate: HTA & Translational Informatics",
+        "ja": "プログラム修了証：医療技術評価・トランスレーショナル情報学"
+      }
     },
     {
-      "title": { "zh": "藥學學士", "en": "B.Sc. in Pharmacy", "ja": "薬学学士" },
-      "dates": { "zh": "2021 – 2025", "en": "", "ja": "" },
-      "institution": { "zh": "臺北醫學大學 藥學系", "en": "Taipei Medical University · School of Pharmacy", "ja": "台北医学大学 薬学部薬学科" },
-      "note": { "zh": "", "en": "", "ja": "" },
-      "certificate": { "zh": "人工智慧微學程證書", "en": "Mini-Program Certificate in Artificial Intelligence", "ja": "人工知能マイクロプログラム修了証" }
+      "title": {
+        "zh": "藥學學士",
+        "en": "B.Sc. in Pharmacy",
+        "ja": "薬学学士"
+      },
+      "dates": {
+        "zh": "2021 – 2025",
+        "en": "",
+        "ja": ""
+      },
+      "institution": {
+        "zh": "臺北醫學大學 藥學系",
+        "en": "Taipei Medical University · School of Pharmacy",
+        "ja": "台北医学大学 薬学部薬学科"
+      },
+      "note": {
+        "zh": "",
+        "en": "",
+        "ja": ""
+      },
+      "certificate": {
+        "zh": "人工智慧微學程證書",
+        "en": "Mini-Program Certificate in Artificial Intelligence",
+        "ja": "人工知能マイクロプログラム修了証"
+      }
     }
   ],
-
   "experience": [
     {
-      "title": { "zh": "兼任執業藥師", "en": "Part-time Registered Pharmacist", "ja": "非常勤薬剤師" },
-      "dates": { "zh": "2025.11 – 2027.09", "en": "", "ja": "" },
-      "institution": { "zh": "臺北醫學大學附設醫院 藥劑部", "en": "Taipei Medical University Hospital · Department of Pharmacy", "ja": "台北医学大学附属病院 薬剤部" },
-      "note": { "zh": "", "en": "", "ja": "" },
-      "certificate": { "zh": "", "en": "", "ja": "" }
+      "title": {
+        "zh": "兼任執業藥師",
+        "en": "Part-time Registered Pharmacist",
+        "ja": "非常勤薬剤師"
+      },
+      "dates": {
+        "zh": "2025.11 – 2027.09",
+        "en": "",
+        "ja": ""
+      },
+      "institution": {
+        "zh": "臺北醫學大學附設醫院 藥劑部",
+        "en": "Taipei Medical University Hospital · Department of Pharmacy",
+        "ja": "台北医学大学附属病院 薬剤部"
+      },
+      "note": {
+        "zh": "",
+        "en": "",
+        "ja": ""
+      },
+      "certificate": {
+        "zh": "",
+        "en": "",
+        "ja": ""
+      }
     },
     {
-      "title": { "zh": "大學部生物統計學課程助教", "en": "Teaching Assistant, Undergraduate Biostatistics", "ja": "学部生物統計学 TA" },
-      "dates": { "zh": "2026 暑期", "en": "Summer 2026", "ja": "2026 年夏" },
-      "institution": { "zh": "臺北醫學大學", "en": "Taipei Medical University", "ja": "台北医学大学" },
-      "note": { "zh": "負責生物統計學討論時間、學生諮詢答疑與課程事務協調。", "en": "Facilitated office hours, answered student inquiries, and coordinated course administration.", "ja": "オフィスアワーで学生の質問に対応し、コース運営業務を調整した。" },
-      "certificate": { "zh": "", "en": "", "ja": "" }
+      "title": {
+        "zh": "大學部生物統計學課程助教",
+        "en": "Teaching Assistant, Undergraduate Biostatistics",
+        "ja": "学部生物統計学 TA"
+      },
+      "dates": {
+        "zh": "2026 暑期",
+        "en": "Summer 2026",
+        "ja": "2026 年夏"
+      },
+      "institution": {
+        "zh": "臺北醫學大學",
+        "en": "Taipei Medical University",
+        "ja": "台北医学大学"
+      },
+      "note": {
+        "zh": "負責生物統計學討論時間、學生諮詢答疑與課程事務協調。",
+        "en": "Facilitated office hours, answered student inquiries, and coordinated course administration.",
+        "ja": "オフィスアワーで学生の質問に対応し、コース運営業務を調整した。"
+      },
+      "certificate": {
+        "zh": "",
+        "en": "",
+        "ja": ""
+      }
     },
     {
-      "title": { "zh": "臨床藥學實習", "en": "Clinical Pharmacy Internship", "ja": "薬学実習" },
-      "dates": { "zh": "2025.01 – 2025.06", "en": "", "ja": "" },
-      "institution": { "zh": "新北市立土城醫院 藥劑科", "en": "New Taipei City Municipal Tucheng Hospital · Department of Pharmacy", "ja": "新北市立土城病院 薬剤科" },
-      "note": { "zh": "", "en": "", "ja": "" },
-      "certificate": { "zh": "", "en": "", "ja": "" }
+      "title": {
+        "zh": "臨床藥學實習",
+        "en": "Clinical Pharmacy Internship",
+        "ja": "薬学実習"
+      },
+      "dates": {
+        "zh": "2025.01 – 2025.06",
+        "en": "",
+        "ja": ""
+      },
+      "institution": {
+        "zh": "新北市立土城醫院 藥劑科",
+        "en": "New Taipei City Municipal Tucheng Hospital · Department of Pharmacy",
+        "ja": "新北市立土城病院 薬剤科"
+      },
+      "note": {
+        "zh": "",
+        "en": "",
+        "ja": ""
+      },
+      "certificate": {
+        "zh": "",
+        "en": "",
+        "ja": ""
+      }
     }
   ],
-
   "publications": [
     {
       "title": "Treatment consequence and adverse events of cyclin-dependent kinase 4/6 inhibitors on patients with hormone receptor-positive, HER2-negative metastatic breast cancer: a systematic review and meta-analysis",
       "journal": "Annals of Medicine",
-      "role": { "zh": "共同第一作者", "en": "Co-first author", "ja": "共同筆頭著者" },
+      "role": {
+        "zh": "共同第一作者",
+        "en": "Co-first author",
+        "ja": "共同筆頭著者"
+      },
       "status": "published",
       "link": ""
     },
     {
       "title": "Efficacy, safety, and timing of everolimus with calcineurin inhibitor reduction or withdrawal in liver transplantation: a systematic review and meta-analysis",
       "journal": "Journal of Clinical Medicine",
-      "role": { "zh": "第二作者", "en": "Second author", "ja": "第二著者" },
+      "role": {
+        "zh": "第二作者",
+        "en": "Second author",
+        "ja": "第二著者"
+      },
       "status": "review",
       "link": ""
     },
     {
       "title": "Real-world effectiveness of CDK4/6 inhibitors in HR-positive/HER2-negative metastatic and high recurrence-risk non-metastatic breast cancer: a Taiwanese retrospective cohort study",
       "journal": "The Breast Journal",
-      "role": { "zh": "共同第一作者", "en": "Co-first author", "ja": "共同筆頭著者" },
+      "role": {
+        "zh": "共同第一作者",
+        "en": "Co-first author",
+        "ja": "共同筆頭著者"
+      },
       "status": "draft",
       "link": ""
     },
     {
       "title": "Antidiabetic agents and neurodegenerative disease: a Bayesian network meta-analysis",
       "journal": "JAMA Network Open",
-      "role": { "zh": "第一作者", "en": "First author", "ja": "筆頭著者" },
+      "role": {
+        "zh": "第一作者",
+        "en": "First author",
+        "ja": "筆頭著者"
+      },
       "status": "draft",
       "link": ""
     }
   ],
-
   "awards": [
     {
       "icon": "star",
-      "kicker": { "zh": "獎項 · 2026 春", "en": "Award · Spring 2026", "ja": "受賞・2026 年春" },
-      "title": { "zh": "最佳電子海報獎（Best E-Poster）", "en": "Best E-Poster Award", "ja": "ベスト電子ポスター賞" },
-      "detail": { "zh": "國際臨床數據分析研習課程", "en": "International Clinical Data Analysis Course", "ja": "国際臨床データ解析コース" }
+      "kicker": {
+        "zh": "獎項 · 2026 春",
+        "en": "Award · Spring 2026",
+        "ja": "受賞・2026 年春"
+      },
+      "title": {
+        "zh": "最佳電子海報獎（Best E-Poster）",
+        "en": "Best E-Poster Award",
+        "ja": "ベスト電子ポスター賞"
+      },
+      "detail": {
+        "zh": "國際臨床數據分析研習課程",
+        "en": "International Clinical Data Analysis Course",
+        "ja": "国際臨床データ解析コース"
+      }
     },
     {
       "icon": "cap",
-      "kicker": { "zh": "獎學金 · 2025 秋", "en": "Scholarship · Autumn 2025", "ja": "奨学金・2025 年秋" },
-      "title": { "zh": "碩士班優秀入學獎學金", "en": "Excellence Scholarship for Master's Students", "ja": "大学院優秀入学奨学金" },
-      "detail": { "zh": "臺北醫學大學 臨床醫學研究所", "en": "Graduate Institute of Clinical Medicine, TMU", "ja": "台北医学大学 臨床医学研究所" }
+      "kicker": {
+        "zh": "獎學金 · 2025 秋",
+        "en": "Scholarship · Autumn 2025",
+        "ja": "奨学金・2025 年秋"
+      },
+      "title": {
+        "zh": "碩士班優秀入學獎學金",
+        "en": "Excellence Scholarship for Master's Students",
+        "ja": "大学院優秀入学奨学金"
+      },
+      "detail": {
+        "zh": "臺北醫學大學 臨床醫學研究所",
+        "en": "Graduate Institute of Clinical Medicine, TMU",
+        "ja": "台北医学大学 臨床医学研究所"
+      }
     },
     {
       "icon": "poster",
-      "kicker": { "zh": "海報發表 · 2026", "en": "Conference Poster · 2026", "ja": "学会発表・2026" },
-      "title": { "zh": "健康數據科學全球高峰論壇", "en": "Health Data Science Global Summit Forum", "ja": "ヘルスデータサイエンス・グローバルサミット" },
-      "detail": { "zh": "Real-world effectiveness of CDK4/6 inhibitors on HR+/HER2- metastatic and non-metastatic high recurrence-risk breast cancer", "en": "", "ja": "" }
+      "kicker": {
+        "zh": "海報發表 · 2026",
+        "en": "Conference Poster · 2026",
+        "ja": "学会発表・2026"
+      },
+      "title": {
+        "zh": "健康數據科學全球高峰論壇",
+        "en": "Health Data Science Global Summit Forum",
+        "ja": "ヘルスデータサイエンス・グローバルサミット"
+      },
+      "detail": {
+        "zh": "Real-world effectiveness of CDK4/6 inhibitors on HR+/HER2- metastatic and non-metastatic high recurrence-risk breast cancer",
+        "en": "",
+        "ja": ""
+      }
     },
     {
       "icon": "mic",
-      "kicker": { "zh": "受邀專題演講", "en": "Invited Keynote", "ja": "招待講演" },
-      "title": { "zh": "利用真實世界數據探討癌症用藥之療效及安全性", "en": "Exploring the Efficacy and Safety of Cancer Drug Therapy Using Real-World Data", "ja": "リアルワールドデータを用いたがん治療薬の有効性と安全性の検討" },
-      "detail": { "zh": "中華民國製藥發展協會（TPMDA）· 藥價政策變革下的產業應對與資料驅動決策研討會", "en": "Taiwan Pharmaceutical Manufacture and Development Association · Symposium on Pricing Policy & Data-Driven Decisions", "ja": "中華民国製薬発展協会 · 薬価政策とデータ駆動型意思決定シンポジウム" }
+      "kicker": {
+        "zh": "受邀專題演講",
+        "en": "Invited Keynote",
+        "ja": "招待講演"
+      },
+      "title": {
+        "zh": "利用真實世界數據探討癌症用藥之療效及安全性",
+        "en": "Exploring the Efficacy and Safety of Cancer Drug Therapy Using Real-World Data",
+        "ja": "リアルワールドデータを用いたがん治療薬の有効性と安全性の検討"
+      },
+      "detail": {
+        "zh": "中華民國製藥發展協會（TPMDA）· 藥價政策變革下的產業應對與資料驅動決策研討會",
+        "en": "Taiwan Pharmaceutical Manufacture and Development Association · Symposium on Pricing Policy & Data-Driven Decisions",
+        "ja": "中華民国製薬発展協会 · 薬価政策とデータ駆動型意思決定シンポジウム"
+      }
     }
   ],
-
   "footer": {
     "quote": {
       "zh": "「在處方與臨床結果之間建立實證基礎——從統合分析到真實世界數據研究。」",

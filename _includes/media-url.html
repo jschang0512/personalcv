@@ -1,0 +1,5 @@
+{% comment %}
+  Resolves an image path into `media_url` (site-relative) and `media_abs` (absolute).
+  Pages CMS stores uploads as "/personalcv/media/…" (already includes baseurl);
+  older values may be "media/…" or full URLs.
+{% endcomment %}{% assign _p = include.path | strip %}{% assign _first = _p | slice: 0 %}{% if _p contains '://' %}{% assign media_url = _p %}{% assign media_abs = _p %}{% elsif _first == '/' %}{% assign media_url = _p %}{% assign media_abs = site.url | append: _p %}{% else %}{% assign media_url = _p | prepend: '/' | relative_url %}{% assign media_abs = _p | prepend: '/' | absolute_url %}{% endif %}

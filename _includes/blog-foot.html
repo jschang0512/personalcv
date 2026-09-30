@@ -1,0 +1,27 @@
+<footer class="site-foot">
+  <div class="wrap">
+    <span>&copy; {{ site.time | date: "%Y" }} {{ site.author }}</span>
+    <a href="{{ '/blog/feed.xml' | relative_url }}">RSS</a>
+  </div>
+</footer>
+<script>
+  function syncLangButtons(){
+    var cur = document.documentElement.getAttribute('data-lang');
+    document.querySelectorAll('[data-lang-btn]').forEach(function(b){
+      b.classList.toggle('active', b.getAttribute('data-lang-btn') === cur);
+    });
+  }
+  function setLang(lang){
+    var root = document.documentElement;
+    root.setAttribute('data-lang', lang);
+    root.setAttribute('lang', { zh: 'zh-Hant', en: 'en', ja: 'ja' }[lang] || 'zh-Hant');
+    syncLangButtons();
+    try{ localStorage.setItem('cv-lang', lang); }catch(e){}
+  }
+  function toggleTheme(){
+    var next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    try{ localStorage.setItem('cv-theme', next); }catch(e){}
+  }
+  syncLangButtons();
+</script>
