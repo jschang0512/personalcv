@@ -1,9 +1,25 @@
+{% assign feed_url = '/blog/feed.xml' | absolute_url %}
 <footer class="site-foot">
   <div class="wrap">
     <span>&copy; {{ site.time | date: "%Y" }} {{ site.author }}</span>
-    <a href="{{ '/blog/feed.xml' | relative_url }}">RSS</a>
+    <a href="{{ '/blog/feed.xml' | relative_url }}" data-rss>RSS</a>
   </div>
 </footer>
+
+<dialog class="rss-dialog" id="rss-dialog" aria-labelledby="rss-title">
+  <form method="dialog" class="rss-close-form"><button class="rss-close" aria-label="Close">×</button></form>
+  <h2 id="rss-title"><span class="zh">訂閱文章更新</span><span class="en">Subscribe to new posts</span><span class="ja">新着記事を購読</span></h2>
+  <p><span class="zh">用 RSS 閱讀器訂閱，有新文章時就會自動收到。選一個閱讀器，或複製訂閱網址貼到你慣用的 App。</span><span class="en">Follow new posts in any RSS reader. Pick one below, or copy the feed address into the app you use.</span><span class="ja">RSS リーダーで購読すると、新しい記事が自動で届きます。下から選ぶか、フィード URL をお使いのアプリに貼り付けてください。</span></p>
+  <div class="rss-readers">
+    <a href="https://feedly.com/i/subscription/feed/{{ feed_url | url_encode }}" target="_blank" rel="noopener">Feedly</a>
+    <a href="https://www.inoreader.com/?add_feed={{ feed_url | url_encode }}" target="_blank" rel="noopener">Inoreader</a>
+  </div>
+  <div class="rss-copy">
+    <input type="text" readonly value="{{ feed_url }}" aria-label="Feed URL" onclick="this.select()">
+    <button type="button" id="rss-copy-btn"><span class="zh">複製</span><span class="en">Copy</span><span class="ja">コピー</span></button>
+  </div>
+</dialog>
+
 <script>
   function syncLangButtons(){
     var cur = document.documentElement.getAttribute('data-lang');
@@ -23,5 +39,40 @@
     document.documentElement.setAttribute('data-theme', next);
     try{ localStorage.setItem('cv-theme', next); }catch(e){}
   }
+  function copyToClipboard(text, done){
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(done).catch(function(){ legacyCopy(text); done(); });
+    } else { legacyCopy(text); done(); }
+  }
+  function legacyCopy(text){
+    var ta = document.createElement('textarea');
+    ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.select();
+    try{ document.execCommand('copy'); }catch(e){}
+    document.body.removeChild(ta);
+  }
+
+  // RSS: open a subscribe dialog instead of showing raw XML
+  (function(){
+    var dlg = document.getElementById('rss-dialog');
+    document.addEventListener('click', function(e){
+      var a = e.target.closest && e.target.closest('[data-rss]');
+      if(!a || !dlg || typeof dlg.showModal !== 'function') return;
+      e.preventDefault();
+      dlg.showModal();
+    });
+    if(dlg){
+      dlg.addEventListener('click', function(e){ if(e.target === dlg) dlg.close(); });
+      var btn = document.getElementById('rss-copy-btn');
+      btn.addEventListener('click', function(){
+        var original = btn.innerHTML;
+        copyToClipboard(dlg.querySelector('input').value, function(){
+          btn.innerHTML = '<span class="zh">已複製</span><span class="en">Copied</span><span class="ja">コピー完了</span>';
+          setTimeout(function(){ btn.innerHTML = original; }, 1800);
+        });
+      });
+    }
+  })();
+
   syncLangButtons();
 </script>

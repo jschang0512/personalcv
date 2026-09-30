@@ -6,7 +6,7 @@ media:
   - name: images
     input: media
     output: /personalcv/media
-    extensions: [jpg, jpeg, png, webp, gif, svg]
+    extensions: [jpg, jpeg, png, webp, gif, svg, mp4, webm, pdf, pptx, docx, xlsx, csv, zip]
     rename: safe
 content:
   - name: site
@@ -78,6 +78,7 @@ content:
             options:
               media: images
               path: media/profile
+              extensions: [jpg, jpeg, png, webp, gif, svg]
           - name: email
             label: "Email（按「聯絡我」會複製）"
             type: string
@@ -665,12 +666,13 @@ content:
     path: _posts
     format: yaml-frontmatter
     filename:
-      template: "{year}-{month}-{day}-{fields.slug}.md"
+      template: "{year}-{month}-{day}-{hour}{minute}{second}.md"
       field: create
     view:
-      fields: [title, date]
+      fields: [title, date, category, published, featured]
       primary: title
       sort: [date, title]
+      search: [title, description, tags]
       default:
         sort: date
         order: desc
@@ -679,38 +681,128 @@ content:
         label: "標題"
         type: string
         required: true
-      - name: slug
-        label: "網址代稱"
+      - name: subtitle
+        label: "副標題（選填）"
         type: string
-        required: true
-        pattern: "^[a-z0-9]+(-[a-z0-9]+)*$"
-        description: "只能用小寫英文、數字和連字號，例如 target-trial-emulation-intro。會成為文章網址的一部分，建立後請勿更改。"
+        description: "顯示在標題下方的一句話"
       - name: date
-        label: "發布日期"
+        label: "發布時間"
         type: date
         required: true
-      - name: description
-        label: "摘要"
-        type: text
-        description: "顯示在文章列表與分享預覽；留空會自動擷取內文開頭"
+        options:
+          time: true
+          format: "yyyy-MM-dd HH:mm"
+        description: "文章依此時間排序"
+      - name: updated
+        label: "最後更新日期（選填）"
+        type: date
+        default: ""
+        options:
+          format: yyyy-MM-dd
+        description: "文章有大幅修改時填寫，會顯示「更新於」"
+      - name: published
+        label: "公開發布"
+        type: boolean
+        default: true
+        description: "取消勾選＝草稿：儲存但不會出現在網站上"
+      - name: featured
+        label: "置頂精選"
+        type: boolean
+        default: false
+        description: "勾選後置頂於文章列表，並優先顯示在首頁「最新文章」"
+      - name: category
+        label: "分類"
+        type: select
+        options:
+          values:
+            - name: notes
+              label: "研究筆記"
+            - name: papers
+              label: "論文導讀"
+            - name: methods
+              label: "方法學"
+            - name: pharmacy
+              label: "臨床藥學"
+            - name: events
+              label: "活動紀錄"
+            - name: essays
+              label: "隨筆"
       - name: tags
         label: "標籤"
         type: string
         list: true
+        description: "讀者可點標籤篩選相同主題的文章"
+      - name: lang
+        label: "文章語言"
+        type: select
+        default: zh
+        options:
+          values:
+            - name: zh
+              label: "中文"
+            - name: en
+              label: English
+            - name: ja
+              label: "日本語"
+      - name: description
+        label: "摘要"
+        type: text
+        description: "顯示在文章列表、首頁與社群分享預覽；留空會自動擷取內文開頭"
       - name: cover
         label: "封面圖（選填）"
         type: image
         options:
           media: images
           path: media/blog
+          extensions: [jpg, jpeg, png, webp, gif, svg]
+        description: "也會作為分享到 Facebook、LINE 時的預覽圖"
+      - name: cover_alt
+        label: "封面圖替代文字"
+        type: string
+        description: "描述圖片內容，給螢幕閱讀器與搜尋引擎"
+      - name: cover_caption
+        label: "封面圖說（選填）"
+        type: string
+      - name: toc
+        label: "顯示目錄"
+        type: boolean
+        default: false
+        description: "依內文的標題 2 / 標題 3 自動產生目錄"
       - name: math
         label: "包含數學公式"
         type: boolean
+        default: false
         description: "勾選後可用 $$ 公式 $$ 撰寫 LaTeX 數學式"
       - name: body
         label: "內文"
         type: rich-text
+        description: "標題請用「標題 2 / 標題 3」。插入圖片後，圖片下一行用斜體寫說明文字即成為圖說。影片：把 YouTube、Vimeo 連結或上傳的 .mp4 網址單獨貼成一行，會自動變成播放器。引用：內文寫 [1]、[2]，文獻填在下方「參考文獻」。"
         options:
           format: markdown
           media: images
           path: media/blog
+      - name: references
+        label: "參考文獻"
+        type: text
+        list: true
+        description: "每一筆是一條文獻，依順序編號為 [1]、[2]…；可直接貼上 DOI 或網址，會自動變成連結。"
+      - name: attachments
+        label: "附件下載"
+        type: object
+        list: true
+        description: "例如投影片、海報 PDF、補充資料"
+        fields:
+          - name: label
+            label: "顯示名稱"
+            type: string
+          - name: file
+            label: "檔案"
+            type: file
+            options:
+              media: images
+              path: media/blog
+              extensions: [pdf, pptx, docx, xlsx, csv, zip]
+      - name: canonical_url
+        label: "原文網址（選填）"
+        type: string
+        description: "若文章轉載自其他網站，填原始網址，搜尋引擎會以原文為主"

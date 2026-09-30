@@ -1,0 +1,1 @@
+{% assign _cat = site.data.blog.categories[include.key] %}{% if _cat %}<span class="zh">{{ _cat.zh }}</span><span class="en">{{ _cat.en }}</span><span class="ja">{{ _cat.ja }}</span>{% else %}{{ include.key }}{% endif %}

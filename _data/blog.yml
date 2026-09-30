@@ -1,0 +1,13 @@
+# Display names for blog categories (keys must match the CMS select values in .pages.yml)
+categories:
+  notes:    { zh: 研究筆記, en: Research Notes,   ja: 研究ノート }
+  papers:   { zh: 論文導讀, en: Paper Reviews,    ja: 論文紹介 }
+  methods:  { zh: 方法學,   en: Methods,          ja: 方法論 }
+  pharmacy: { zh: 臨床藥學, en: Clinical Pharmacy, ja: 臨床薬学 }
+  events:   { zh: 活動紀錄, en: Events,           ja: 活動記録 }
+  essays:   { zh: 隨筆,     en: Essays,           ja: エッセイ }
+
+languages:
+  zh: { label: 中文, html: zh-Hant }
+  en: { label: English, html: en }
+  ja: { label: 日本語, html: ja }

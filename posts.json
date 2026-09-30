@@ -1,12 +1,14 @@
 ---
 layout: null
 ---
-[{% for post in site.posts limit: 3 %}
+{% assign featured = site.posts | where: "featured", true %}{% assign latest = "" | split: "" %}{% for p in featured %}{% assign latest = latest | push: p %}{% endfor %}{% for p in site.posts %}{% unless p.featured %}{% assign latest = latest | push: p %}{% endunless %}{% endfor %}[{% for post in latest limit: 3 %}
   {
     "title": {{ post.title | jsonify }},
     "url": {{ post.url | jsonify }},
     "date": {{ post.date | date: "%Y-%m-%d" | jsonify }},
-    "description": {{ post.description | default: post.excerpt | strip_html | strip_newlines | truncate: 120 | jsonify }},
+    "description": {% if post.description and post.description != "" %}{{ post.description | strip_newlines | truncate: 120 | jsonify }}{% else %}{{ post.excerpt | strip_html | strip_newlines | truncate: 120 | jsonify }}{% endif %},
+    "category": {{ post.category | default: "" | jsonify }},
+    "featured": {% if post.featured %}true{% else %}false{% endif %},
     "tags": {{ post.tags | jsonify }}
   }{% unless forloop.last %},{% endunless %}{% endfor %}
 ]

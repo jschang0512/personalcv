@@ -1,0 +1,18 @@
+{% assign p = include.post %}{% include reading-time.html post=p %}{% assign p_lang = p.lang | default: 'zh' %}
+<article class="post-card{% if p.featured %} is-featured{% endif %}" data-category="{{ p.category | escape }}" data-tags="{{ p.tags | join: '|' | escape }}">
+  <div class="post-side">
+    <time datetime="{{ p.date | date_to_xmlschema }}">{{ p.date | date: "%Y.%m.%d" }}</time>
+    <span class="rt"><span class="zh">{{ reading_minutes }} 分鐘</span><span class="en">{{ reading_minutes }} min</span><span class="ja">{{ reading_minutes }} 分</span></span>
+  </div>
+  <div>
+    <div class="post-kicker">
+      {% if p.featured %}<span class="featured-badge">★ <span class="zh">精選</span><span class="en">Featured</span><span class="ja">注目</span></span>{% endif %}
+      {% if p.category and p.category != "" %}<span class="cat">{% include category-name.html key=p.category %}</span>{% endif %}
+      {% if p_lang != 'zh' %}<span class="lang-badge">{{ site.data.blog.languages[p_lang].label }}</span>{% endif %}
+    </div>
+    <h2><a class="stretched" href="{{ p.url | relative_url }}">{{ p.title }}</a></h2>
+    {% if p.subtitle and p.subtitle != "" %}<p class="sub">{{ p.subtitle }}</p>{% endif %}
+    <p>{% if p.description and p.description != "" %}{{ p.description }}{% else %}{{ p.excerpt | strip_html | strip_newlines | truncate: 140 }}{% endif %}</p>
+    {% if p.tags.size > 0 %}<div class="tags">{% for tag in p.tags %}<span class="tag">#{{ tag }}</span>{% endfor %}</div>{% endif %}
+  </div>
+</article>
