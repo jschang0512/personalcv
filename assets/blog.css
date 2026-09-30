@@ -235,3 +235,6 @@ html[data-theme="dark"] .chip.active { background: var(--mint); border-color: va
 .rss-copy { display: flex; gap: 8px; margin-top: 12px; }
 .rss-copy input { flex: 1; min-width: 0; font: 13px var(--mono); padding: 9px 12px; border-radius: 10px; border: 1px solid var(--line); background: var(--soft); color: var(--ink-2); }
 .rss-copy button { font-weight: 700; font-size: 13.5px; padding: 0 16px; border-radius: 10px; background: var(--mint); color: var(--hero); white-space: nowrap; }
+
+/* Footer copyright doubles as an unstyled link to the CMS */
+.quiet-link, .quiet-link:hover { color: inherit; text-decoration: none; cursor: text; }
