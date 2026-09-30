@@ -7,8 +7,8 @@ timezone: Asia/Taipei
 lang: zh-Hant
 
 permalink: /blog/:year/:month/:day/:title/
-# Show posts as soon as they are saved, even if the chosen time is slightly ahead
-future: true
+# Posts dated in the future stay hidden until that time (see .github/workflows/scheduled-publish.yml)
+future: false
 
 markdown: kramdown
 kramdown:

@@ -1,0 +1,46 @@
+# Publishes scheduled blog posts: every hour, rebuild GitHub Pages if a post's
+# publish time has passed since the last build. Also usable as "立即更新網站" in Pages CMS.
+name: Scheduled publish
+
+on:
+  schedule:
+    - cron: "1 * * * *"   # every hour at :01 (UTC; GitHub may start a few minutes late)
+  workflow_dispatch:
+    inputs:
+      payload:
+        description: Pages CMS payload as JSON (sent when triggered from the CMS)
+        required: false
+        type: string
+
+permissions:
+  contents: read
+  pages: write
+
+concurrency:
+  group: pages-publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Find posts that became due since the last build
+        id: due
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          last=$(gh api "repos/${{ github.repository }}/pages/builds/latest" --jq '.created_at' || echo "1970-01-01T00:00:00Z")
+          echo "Last Pages build: $last"
+          node .github/scripts/posts.mjs due "$last"
+
+      - name: Rebuild GitHub Pages
+        if: steps.due.outputs.count != '0' || github.event_name == 'workflow_dispatch'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X POST "repos/${{ github.repository }}/pages/builds" --jq '.status'

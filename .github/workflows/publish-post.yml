@@ -1,0 +1,54 @@
+# "立即發布" button in Pages CMS: sets the post's date to now and published: true,
+# commits it, and rebuilds GitHub Pages right away.
+name: Publish post now
+
+on:
+  workflow_dispatch:
+    inputs:
+      payload:
+        description: Pages CMS payload as JSON
+        required: true
+        type: string
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: pages-publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Set publish time to now
+        env:
+          PAYLOAD: ${{ inputs.payload }}
+        run: |
+          post=$(node -e 'const p = JSON.parse(process.env.PAYLOAD || "{}"); process.stdout.write((p.context && p.context.path) || "")')
+          echo "Post: $post"
+          node .github/scripts/posts.mjs publish-now "$post"
+
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add _posts
+          if git diff --cached --quiet; then
+            echo "Nothing changed."
+          else
+            git commit -m "Publish post now (from Pages CMS)"
+            git push
+          fi
+
+      - name: Rebuild GitHub Pages
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X POST "repos/${{ github.repository }}/pages/builds" --jq '.status'

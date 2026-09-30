@@ -2,6 +2,14 @@
 # Log in at https://app.pagescms.org with GitHub, open this repo, and edit "網站內容".
 # Multilingual fields have 中文 / English / 日本語; leave English or 日本語 empty to reuse 中文.
 # Generated without components so every list shows an "Add" button.
+actions:
+  - name: rebuild-site
+    label: "立即更新網站"
+    workflow: scheduled-publish.yml
+    confirm:
+      title: "立即更新網站？"
+      message: "重新建置網站，讓剛到期的預約文章或最新修改馬上生效，約 1–2 分鐘完成。"
+      button: "更新"
 media:
   - name: images
     input: media
@@ -676,6 +684,15 @@ content:
       default:
         sort: date
         order: desc
+    actions:
+      - name: publish-now
+        label: "立即發布"
+        scope: entry
+        workflow: publish-post.yml
+        confirm:
+          title: "立即發布這篇文章？"
+          message: "會把發布時間改成現在並設為公開，約 1–2 分鐘後出現在網站上。按之前請先儲存文章；完成後重新整理此頁。"
+          button: "立即發布"
     fields:
       - name: title
         label: "標題"
@@ -692,7 +709,7 @@ content:
         options:
           time: true
           format: "yyyy-MM-dd HH:mm"
-        description: "文章依此時間排序"
+        description: "填現在或過去＝儲存後約 1–2 分鐘上線；填未來時間＝預約發布，請選整點（例如 14:00），會在該整點後約 5–15 分鐘內自動上線。想提早發布請按上方「立即發布」。"
       - name: updated
         label: "最後更新日期（選填）"
         type: date
