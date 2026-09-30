@@ -1,164 +1,613 @@
 # Pages CMS configuration — https://pagescms.org
 # Log in at https://app.pagescms.org with GitHub, open this repo, and edit "網站內容".
-# Every multilingual field has 中文 / English / 日本語; leave English or 日本語 empty to reuse 中文.
-
+# Multilingual fields have 中文 / English / 日本語; leave English or 日本語 empty to reuse 中文.
+# Generated without components so every list shows an "Add" button.
 media:
   input: media
   output: media
   categories: [image]
-
-components:
-  i18n:
-    type: object
-    fields:
-      - { name: zh, label: 中文, type: string }
-      - { name: en, label: English, type: string }
-      - { name: ja, label: 日本語, type: string }
-  i18nText:
-    type: object
-    fields:
-      - { name: zh, label: 中文, type: text }
-      - { name: en, label: English, type: text }
-      - { name: ja, label: 日本語, type: text }
-  timelineItem:
-    type: object
-    list:
-      collapsible:
-        collapsed: true
-        summary: "{fields.title.zh}"
-    fields:
-      - { name: title, label: 名稱, component: i18n }
-      - { name: dates, label: 期間, component: i18n, description: "例：2025 – 2027；英文、日文相同時可留空" }
-      - { name: institution, label: 單位, component: i18n }
-      - { name: note, label: 說明（選填）, component: i18n }
-      - { name: certificate, label: 證書標籤（選填）, component: i18n }
-
 content:
   - name: site
-    label: 網站內容
+    label: "網站內容"
     type: file
     path: content.json
     format: json
     fields:
       - name: profile
-        label: 個人資料
+        label: "個人資料"
         type: object
         fields:
-          - { name: name, label: 姓名, component: i18n }
-          - { name: subtitle, label: 姓名下方副標, component: i18n }
-          - { name: badge, label: 姓名上方標籤, component: i18n }
-          - { name: pitch, label: 一句話介紹, component: i18nText, description: "用 **文字** 標示要以強調色顯示的字" }
-          - { name: photo, label: 大頭照, type: image }
-          - { name: email, label: Email（按「聯絡我」會複製）, type: string }
-          - { name: orcid, label: ORCID 網址, type: string }
-          - { name: linkedin, label: LinkedIn 網址, type: string }
-          - { name: toolkit, label: 小工具網址（留空則不顯示）, type: string }
-
+          - name: name
+            label: "姓名"
+            type: object
+            fields:
+              - name: zh
+                label: "中文"
+                type: string
+              - name: en
+                label: English
+                type: string
+              - name: ja
+                label: "日本語"
+                type: string
+          - name: subtitle
+            label: "姓名下方副標"
+            type: object
+            fields:
+              - name: zh
+                label: "中文"
+                type: string
+              - name: en
+                label: English
+                type: string
+              - name: ja
+                label: "日本語"
+                type: string
+          - name: badge
+            label: "姓名上方標籤"
+            type: object
+            fields:
+              - name: zh
+                label: "中文"
+                type: string
+              - name: en
+                label: English
+                type: string
+              - name: ja
+                label: "日本語"
+                type: string
+          - name: pitch
+            label: "一句話介紹"
+            description: "用 **文字** 標示要以強調色顯示的字"
+            type: object
+            fields:
+              - name: zh
+                label: "中文"
+                type: text
+              - name: en
+                label: English
+                type: text
+              - name: ja
+                label: "日本語"
+                type: text
+          - name: photo
+            label: "大頭照"
+            type: image
+          - name: email
+            label: "Email（按「聯絡我」會複製）"
+            type: string
+          - name: orcid
+            label: "ORCID 網址"
+            type: string
+          - name: linkedin
+            label: "LinkedIn 網址"
+            type: string
+          - name: toolkit
+            label: "小工具網址（留空則不顯示）"
+            type: string
       - name: stats
-        label: 數字卡
+        label: "數字卡（最多 4 張）"
         type: object
         list:
           max: 4
           collapsible:
-            collapsed: true
-            summary: "{fields.value}"
+            collapsed: false
+            summary: "{value}"
         fields:
-          - { name: value, label: 大字, type: string }
-          - { name: label, label: 標題, component: i18n }
-          - { name: detail, label: 說明, component: i18n }
-
+          - name: value
+            label: "大字"
+            type: string
+          - name: label
+            label: "標題"
+            type: object
+            fields:
+              - name: zh
+                label: "中文"
+                type: string
+              - name: en
+                label: English
+                type: string
+              - name: ja
+                label: "日本語"
+                type: string
+          - name: detail
+            label: "說明"
+            type: object
+            fields:
+              - name: zh
+                label: "中文"
+                type: string
+              - name: en
+                label: English
+                type: string
+              - name: ja
+                label: "日本語"
+                type: string
       - name: research
-        label: 研究方向
+        label: "研究方向"
         type: object
         fields:
-          - { name: summary, label: 研究介紹, component: i18nText, description: "用 **文字** 標示粗體" }
-          - { name: methods, label: 方法學標籤, component: i18n, list: true }
-          - { name: areas, label: 治療領域標籤, component: i18n, list: true }
-
-      - { name: education, label: 學歷, component: timelineItem }
-      - { name: experience, label: 經歷, component: timelineItem }
-
+          - name: summary
+            label: "研究介紹"
+            description: "用 **文字** 標示粗體"
+            type: object
+            fields:
+              - name: zh
+                label: "中文"
+                type: text
+              - name: en
+                label: English
+                type: text
+              - name: ja
+                label: "日本語"
+                type: text
+          - name: methods
+            label: "方法學標籤"
+            list: true
+            type: object
+            fields:
+              - name: zh
+                label: "中文"
+                type: string
+              - name: en
+                label: English
+                type: string
+              - name: ja
+                label: "日本語"
+                type: string
+          - name: areas
+            label: "治療領域標籤"
+            list: true
+            type: object
+            fields:
+              - name: zh
+                label: "中文"
+                type: string
+              - name: en
+                label: English
+                type: string
+              - name: ja
+                label: "日本語"
+                type: string
+      - name: education
+        label: "學歷"
+        type: object
+        list: true
+        fields:
+          - name: title
+            label: "名稱"
+            type: object
+            fields:
+              - name: zh
+                label: "中文"
+                type: string
+              - name: en
+                label: English
+                type: string
+              - name: ja
+                label: "日本語"
+                type: string
+          - name: dates
+            label: "期間"
+            description: "例：2025 – 2027；英文、日文相同時可留空"
+            type: object
+            fields:
+              - name: zh
+                label: "中文"
+                type: string
+              - name: en
+                label: English
+                type: string
+              - name: ja
+                label: "日本語"
+                type: string
+          - name: institution
+            label: "單位"
+            type: object
+            fields:
+              - name: zh
+                label: "中文"
+                type: string
+              - name: en
+                label: English
+                type: string
+              - name: ja
+                label: "日本語"
+                type: string
+          - name: note
+            label: "說明（選填）"
+            type: object
+            fields:
+              - name: zh
+                label: "中文"
+                type: string
+              - name: en
+                label: English
+                type: string
+              - name: ja
+                label: "日本語"
+                type: string
+          - name: certificate
+            label: "證書標籤（選填）"
+            type: object
+            fields:
+              - name: zh
+                label: "中文"
+                type: string
+              - name: en
+                label: English
+                type: string
+              - name: ja
+                label: "日本語"
+                type: string
+      - name: experience
+        label: "經歷"
+        type: object
+        list: true
+        fields:
+          - name: title
+            label: "名稱"
+            type: object
+            fields:
+              - name: zh
+                label: "中文"
+                type: string
+              - name: en
+                label: English
+                type: string
+              - name: ja
+                label: "日本語"
+                type: string
+          - name: dates
+            label: "期間"
+            description: "例：2025 – 2027；英文、日文相同時可留空"
+            type: object
+            fields:
+              - name: zh
+                label: "中文"
+                type: string
+              - name: en
+                label: English
+                type: string
+              - name: ja
+                label: "日本語"
+                type: string
+          - name: institution
+            label: "單位"
+            type: object
+            fields:
+              - name: zh
+                label: "中文"
+                type: string
+              - name: en
+                label: English
+                type: string
+              - name: ja
+                label: "日本語"
+                type: string
+          - name: note
+            label: "說明（選填）"
+            type: object
+            fields:
+              - name: zh
+                label: "中文"
+                type: string
+              - name: en
+                label: English
+                type: string
+              - name: ja
+                label: "日本語"
+                type: string
+          - name: certificate
+            label: "證書標籤（選填）"
+            type: object
+            fields:
+              - name: zh
+                label: "中文"
+                type: string
+              - name: en
+                label: English
+                type: string
+              - name: ja
+                label: "日本語"
+                type: string
       - name: publications
-        label: 學術著作
+        label: "學術著作"
         type: object
         list:
           collapsible:
             collapsed: true
-            summary: "{fields.journal} — {fields.title}"
+            summary: "{index}. {journal}"
         fields:
-          - { name: title, label: 論文標題, type: text }
-          - { name: journal, label: 期刊, type: string }
-          - { name: role, label: 作者序, component: i18n }
+          - name: title
+            label: "論文標題"
+            type: text
+          - name: journal
+            label: "期刊"
+            type: string
+          - name: role
+            label: "作者序"
+            type: object
+            fields:
+              - name: zh
+                label: "中文"
+                type: string
+              - name: en
+                label: English
+                type: string
+              - name: ja
+                label: "日本語"
+                type: string
           - name: status
-            label: 狀態
+            label: "狀態"
             type: select
             options:
               values:
-                - { name: published, label: 已發表 }
-                - { name: accepted, label: 已接受 }
-                - { name: review, label: 審查中 }
-                - { name: preprint, label: 預印本 }
-                - { name: draft, label: 撰寫中 }
-          - { name: link, label: 論文連結（選填，例如 DOI 網址）, type: string }
-
+                - name: published
+                  label: "已發表"
+                - name: accepted
+                  label: "已接受"
+                - name: review
+                  label: "審查中"
+                - name: preprint
+                  label: "預印本"
+                - name: draft
+                  label: "撰寫中"
+          - name: link
+            label: "論文連結（選填，例如 DOI 網址）"
+            type: string
       - name: awards
-        label: 獎項與學術活動
+        label: "獎項與學術活動"
         type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: "{fields.title.zh}"
+        list: true
         fields:
           - name: icon
-            label: 圖示
+            label: "圖示"
             type: select
             options:
               values:
-                - { name: star, label: 星星（獎項） }
-                - { name: cap, label: 學士帽（獎學金） }
-                - { name: poster, label: 海報（發表） }
-                - { name: mic, label: 麥克風（演講） }
-                - { name: book, label: 書本（其他） }
-          - { name: kicker, label: 小標（類別・時間）, component: i18n }
-          - { name: title, label: 名稱, component: i18n }
-          - { name: detail, label: 說明, component: i18n }
-
+                - name: star
+                  label: "星星（獎項）"
+                - name: cap
+                  label: "學士帽（獎學金）"
+                - name: poster
+                  label: "海報（發表）"
+                - name: mic
+                  label: "麥克風（演講）"
+                - name: book
+                  label: "書本（其他）"
+          - name: kicker
+            label: "小標（類別・時間）"
+            type: object
+            fields:
+              - name: zh
+                label: "中文"
+                type: string
+              - name: en
+                label: English
+                type: string
+              - name: ja
+                label: "日本語"
+                type: string
+          - name: title
+            label: "名稱"
+            type: object
+            fields:
+              - name: zh
+                label: "中文"
+                type: string
+              - name: en
+                label: English
+                type: string
+              - name: ja
+                label: "日本語"
+                type: string
+          - name: detail
+            label: "說明"
+            type: object
+            fields:
+              - name: zh
+                label: "中文"
+                type: string
+              - name: en
+                label: English
+                type: string
+              - name: ja
+                label: "日本語"
+                type: string
       - name: sections
-        label: 區塊標題與選單
+        label: "區塊標題與選單"
         type: object
         fields:
           - name: research
-            label: 研究方向區塊
+            label: "研究方向區塊"
             type: object
             fields:
-              - { name: nav, label: 選單文字, component: i18n }
-              - { name: title, label: 標題, component: i18n }
-              - { name: subtitle, label: 副標（選填）, component: i18n }
+              - name: nav
+                label: "選單文字"
+                type: object
+                fields:
+                  - name: zh
+                    label: "中文"
+                    type: string
+                  - name: en
+                    label: English
+                    type: string
+                  - name: ja
+                    label: "日本語"
+                    type: string
+              - name: title
+                label: "標題"
+                type: object
+                fields:
+                  - name: zh
+                    label: "中文"
+                    type: string
+                  - name: en
+                    label: English
+                    type: string
+                  - name: ja
+                    label: "日本語"
+                    type: string
+              - name: subtitle
+                label: "副標（選填）"
+                type: object
+                fields:
+                  - name: zh
+                    label: "中文"
+                    type: string
+                  - name: en
+                    label: English
+                    type: string
+                  - name: ja
+                    label: "日本語"
+                    type: string
           - name: cv
-            label: 學經歷區塊
+            label: "學經歷區塊"
             type: object
             fields:
-              - { name: nav, label: 選單文字, component: i18n }
-              - { name: title, label: 標題, component: i18n }
-              - { name: subtitle, label: 副標（選填）, component: i18n }
+              - name: nav
+                label: "選單文字"
+                type: object
+                fields:
+                  - name: zh
+                    label: "中文"
+                    type: string
+                  - name: en
+                    label: English
+                    type: string
+                  - name: ja
+                    label: "日本語"
+                    type: string
+              - name: title
+                label: "標題"
+                type: object
+                fields:
+                  - name: zh
+                    label: "中文"
+                    type: string
+                  - name: en
+                    label: English
+                    type: string
+                  - name: ja
+                    label: "日本語"
+                    type: string
+              - name: subtitle
+                label: "副標（選填）"
+                type: object
+                fields:
+                  - name: zh
+                    label: "中文"
+                    type: string
+                  - name: en
+                    label: English
+                    type: string
+                  - name: ja
+                    label: "日本語"
+                    type: string
           - name: publications
-            label: 學術著作區塊
+            label: "學術著作區塊"
             type: object
             fields:
-              - { name: nav, label: 選單文字, component: i18n }
-              - { name: title, label: 標題, component: i18n }
-              - { name: subtitle, label: 副標（選填）, component: i18n }
+              - name: nav
+                label: "選單文字"
+                type: object
+                fields:
+                  - name: zh
+                    label: "中文"
+                    type: string
+                  - name: en
+                    label: English
+                    type: string
+                  - name: ja
+                    label: "日本語"
+                    type: string
+              - name: title
+                label: "標題"
+                type: object
+                fields:
+                  - name: zh
+                    label: "中文"
+                    type: string
+                  - name: en
+                    label: English
+                    type: string
+                  - name: ja
+                    label: "日本語"
+                    type: string
+              - name: subtitle
+                label: "副標（選填）"
+                type: object
+                fields:
+                  - name: zh
+                    label: "中文"
+                    type: string
+                  - name: en
+                    label: English
+                    type: string
+                  - name: ja
+                    label: "日本語"
+                    type: string
           - name: awards
-            label: 獎項區塊
+            label: "獎項區塊"
             type: object
             fields:
-              - { name: nav, label: 選單文字, component: i18n }
-              - { name: title, label: 標題, component: i18n }
-              - { name: subtitle, label: 副標（選填）, component: i18n }
-
+              - name: nav
+                label: "選單文字"
+                type: object
+                fields:
+                  - name: zh
+                    label: "中文"
+                    type: string
+                  - name: en
+                    label: English
+                    type: string
+                  - name: ja
+                    label: "日本語"
+                    type: string
+              - name: title
+                label: "標題"
+                type: object
+                fields:
+                  - name: zh
+                    label: "中文"
+                    type: string
+                  - name: en
+                    label: English
+                    type: string
+                  - name: ja
+                    label: "日本語"
+                    type: string
+              - name: subtitle
+                label: "副標（選填）"
+                type: object
+                fields:
+                  - name: zh
+                    label: "中文"
+                    type: string
+                  - name: en
+                    label: English
+                    type: string
+                  - name: ja
+                    label: "日本語"
+                    type: string
       - name: footer
-        label: 頁尾
+        label: "頁尾"
         type: object
         fields:
-          - { name: quote, label: 引言, component: i18n }
-          - { name: updated, label: 最後更新日期, type: date }
+          - name: quote
+            label: "引言"
+            type: object
+            fields:
+              - name: zh
+                label: "中文"
+                type: string
+              - name: en
+                label: English
+                type: string
+              - name: ja
+                label: "日本語"
+                type: string
+          - name: updated
+            label: "最後更新日期"
+            type: date
