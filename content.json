@@ -67,93 +67,6 @@
       }
     }
   ],
-  "sections": {
-    "research": {
-      "nav": {
-        "zh": "研究方向",
-        "en": "Research",
-        "ja": "研究"
-      },
-      "title": {
-        "zh": "研究方向",
-        "en": "Research Focus",
-        "ja": "研究焦点"
-      },
-      "subtitle": {
-        "zh": "從統合分析到真實世界數據研究",
-        "en": "From meta-analysis to real-world data research",
-        "ja": "メタアナリシスからリアルワールドデータ研究へ"
-      }
-    },
-    "cv": {
-      "nav": {
-        "zh": "學經歷",
-        "en": "Education & Experience",
-        "ja": "学歴・経歴"
-      },
-      "title": {
-        "zh": "學歷與經歷",
-        "en": "Education & Experience",
-        "ja": "学歴・経歴"
-      },
-      "subtitle": {
-        "zh": "",
-        "en": "",
-        "ja": ""
-      }
-    },
-    "publications": {
-      "nav": {
-        "zh": "學術著作",
-        "en": "Publications",
-        "ja": "論文"
-      },
-      "title": {
-        "zh": "學術著作",
-        "en": "Publications",
-        "ja": "学術論文"
-      },
-      "subtitle": {
-        "zh": "系統性回顧、統合分析與真實世界世代研究",
-        "en": "Systematic reviews, meta-analyses, and real-world cohort studies",
-        "ja": "システマティックレビュー・メタアナリシス・リアルワールドコホート研究"
-      }
-    },
-    "awards": {
-      "nav": {
-        "zh": "獎項活動",
-        "en": "Awards",
-        "ja": "受賞・活動"
-      },
-      "title": {
-        "zh": "獎項與學術活動",
-        "en": "Awards & Academic Activities",
-        "ja": "受賞・学術活動"
-      },
-      "subtitle": {
-        "zh": "",
-        "en": "",
-        "ja": ""
-      }
-    },
-    "blog": {
-      "nav": {
-        "zh": "文章",
-        "en": "Blog",
-        "ja": "ブログ"
-      },
-      "title": {
-        "zh": "最新文章",
-        "en": "Latest Writing",
-        "ja": "最新の記事"
-      },
-      "subtitle": {
-        "zh": "研究筆記與觀點",
-        "en": "Research notes and perspectives",
-        "ja": "研究ノートと考察"
-      }
-    }
-  },
   "research": {
     "summary": {
       "zh": "藥師與臨床醫學碩士生，研究工作聚焦於**真實世界證據（Real-World Evidence, RWE）**與**實證統合（Evidence Synthesis）**的交會點。方法學涵蓋系統性回顧與統合分析、貝氏網絡統合分析（Bayesian Network Meta-Analysis），以及目標試驗模擬（Target Trial Emulation），應用領域包含腫瘤學（HR+/HER2- 乳癌之 CDK4/6 抑制劑）、移植醫學（以 everolimus 為基礎之免疫抑制方案）與神經退化疾病。未來將以大型理賠與登錄資料庫持續延伸此研究方向。",
@@ -162,24 +75,16 @@
     },
     "methods": [
       {
-        "zh": "Real-World Evidence",
-        "en": "",
-        "ja": ""
+        "zh": "Real-World Evidence"
       },
       {
-        "zh": "Meta-Analysis",
-        "en": "",
-        "ja": ""
+        "zh": "Meta-Analysis"
       },
       {
-        "zh": "Bayesian NMA",
-        "en": "",
-        "ja": ""
+        "zh": "Bayesian NMA"
       },
       {
-        "zh": "Target Trial Emulation",
-        "en": "",
-        "ja": ""
+        "zh": "Target Trial Emulation"
       }
     ],
     "areas": [
@@ -208,19 +113,12 @@
         "ja": "臨床医学修士課程"
       },
       "dates": {
-        "zh": "2025 – 2027",
-        "en": "",
-        "ja": ""
+        "zh": "2025 – 2027"
       },
       "institution": {
         "zh": "臺北醫學大學 臨床醫學研究所",
         "en": "Taipei Medical University · Graduate Institute of Clinical Medicine",
         "ja": "台北医学大学 臨床医学研究所"
-      },
-      "note": {
-        "zh": "",
-        "en": "",
-        "ja": ""
       },
       "certificate": {
         "zh": "學程證書：健康科技評估與轉譯資訊學",
@@ -235,19 +133,12 @@
         "ja": "薬学学士"
       },
       "dates": {
-        "zh": "2021 – 2025",
-        "en": "",
-        "ja": ""
+        "zh": "2021 – 2025"
       },
       "institution": {
         "zh": "臺北醫學大學 藥學系",
         "en": "Taipei Medical University · School of Pharmacy",
         "ja": "台北医学大学 薬学部薬学科"
-      },
-      "note": {
-        "zh": "",
-        "en": "",
-        "ja": ""
       },
       "certificate": {
         "zh": "人工智慧微學程證書",
@@ -264,24 +155,12 @@
         "ja": "非常勤薬剤師"
       },
       "dates": {
-        "zh": "2025.11 – 2027.09",
-        "en": "",
-        "ja": ""
+        "zh": "2025.11 – 2027.09"
       },
       "institution": {
         "zh": "臺北醫學大學附設醫院 藥劑部",
         "en": "Taipei Medical University Hospital · Department of Pharmacy",
         "ja": "台北医学大学附属病院 薬剤部"
-      },
-      "note": {
-        "zh": "",
-        "en": "",
-        "ja": ""
-      },
-      "certificate": {
-        "zh": "",
-        "en": "",
-        "ja": ""
       }
     },
     {
@@ -304,11 +183,6 @@
         "zh": "負責生物統計學討論時間、學生諮詢答疑與課程事務協調。",
         "en": "Facilitated office hours, answered student inquiries, and coordinated course administration.",
         "ja": "オフィスアワーで学生の質問に対応し、コース運営業務を調整した。"
-      },
-      "certificate": {
-        "zh": "",
-        "en": "",
-        "ja": ""
       }
     },
     {
@@ -318,24 +192,12 @@
         "ja": "薬学実習"
       },
       "dates": {
-        "zh": "2025.01 – 2025.06",
-        "en": "",
-        "ja": ""
+        "zh": "2025.01 – 2025.06"
       },
       "institution": {
         "zh": "新北市立土城醫院 藥劑科",
         "en": "New Taipei City Municipal Tucheng Hospital · Department of Pharmacy",
         "ja": "新北市立土城病院 薬剤科"
-      },
-      "note": {
-        "zh": "",
-        "en": "",
-        "ja": ""
-      },
-      "certificate": {
-        "zh": "",
-        "en": "",
-        "ja": ""
       }
     }
   ],
@@ -348,8 +210,7 @@
         "en": "Co-first author",
         "ja": "共同筆頭著者"
       },
-      "status": "published",
-      "link": ""
+      "status": "published"
     },
     {
       "title": "Efficacy, safety, and timing of everolimus with calcineurin inhibitor reduction or withdrawal in liver transplantation: a systematic review and meta-analysis",
@@ -359,8 +220,7 @@
         "en": "Second author",
         "ja": "第二著者"
       },
-      "status": "review",
-      "link": ""
+      "status": "review"
     },
     {
       "title": "Real-world effectiveness of CDK4/6 inhibitors in HR-positive/HER2-negative metastatic and high recurrence-risk non-metastatic breast cancer: a Taiwanese retrospective cohort study",
@@ -370,8 +230,7 @@
         "en": "Co-first author",
         "ja": "共同筆頭著者"
       },
-      "status": "draft",
-      "link": ""
+      "status": "draft"
     },
     {
       "title": "Antidiabetic agents and neurodegenerative disease: a Bayesian network meta-analysis",
@@ -381,8 +240,7 @@
         "en": "First author",
         "ja": "筆頭著者"
       },
-      "status": "draft",
-      "link": ""
+      "status": "draft"
     }
   ],
   "awards": [
@@ -435,9 +293,7 @@
         "ja": "ヘルスデータサイエンス・グローバルサミット"
       },
       "detail": {
-        "zh": "Real-world effectiveness of CDK4/6 inhibitors on HR+/HER2- metastatic and non-metastatic high recurrence-risk breast cancer",
-        "en": "",
-        "ja": ""
+        "zh": "Real-world effectiveness of CDK4/6 inhibitors on HR+/HER2- metastatic and non-metastatic high recurrence-risk breast cancer"
       }
     },
     {
@@ -459,12 +315,89 @@
       }
     }
   ],
+  "sections": {
+    "research": {
+      "nav": {
+        "zh": "研究方向",
+        "en": "Research",
+        "ja": "研究"
+      },
+      "title": {
+        "zh": "研究方向",
+        "en": "Research Focus",
+        "ja": "研究焦点"
+      },
+      "subtitle": {
+        "zh": "從統合分析到真實世界數據研究",
+        "en": "From meta-analysis to real-world data research",
+        "ja": "メタアナリシスからリアルワールドデータ研究へ"
+      }
+    },
+    "cv": {
+      "nav": {
+        "zh": "學經歷",
+        "en": "Education & Experience",
+        "ja": "学歴・経歴"
+      },
+      "title": {
+        "zh": "學歷與經歷",
+        "en": "Education & Experience",
+        "ja": "学歴・経歴"
+      }
+    },
+    "publications": {
+      "nav": {
+        "zh": "學術著作",
+        "en": "Publications",
+        "ja": "論文"
+      },
+      "title": {
+        "zh": "學術著作",
+        "en": "Publications",
+        "ja": "学術論文"
+      },
+      "subtitle": {
+        "zh": "系統性回顧、統合分析與真實世界世代研究",
+        "en": "Systematic reviews, meta-analyses, and real-world cohort studies",
+        "ja": "システマティックレビュー・メタアナリシス・リアルワールドコホート研究"
+      }
+    },
+    "awards": {
+      "nav": {
+        "zh": "獎項活動",
+        "en": "Awards",
+        "ja": "受賞・活動"
+      },
+      "title": {
+        "zh": "獎項與學術活動",
+        "en": "Awards & Academic Activities",
+        "ja": "受賞・学術活動"
+      }
+    },
+    "blog": {
+      "nav": {
+        "zh": "文章",
+        "en": "Blog",
+        "ja": "ブログ"
+      },
+      "title": {
+        "zh": "最新文章",
+        "en": "Latest Writing",
+        "ja": "最新の記事"
+      },
+      "subtitle": {
+        "zh": "研究筆記與觀點",
+        "en": "Research notes and perspectives",
+        "ja": "研究ノートと考察"
+      }
+    }
+  },
   "footer": {
     "quote": {
       "zh": "「在處方與臨床結果之間建立實證基礎——從統合分析到真實世界數據研究。」",
       "en": "“Building the rigorous evidence base between prescription and outcome — from meta-analysis to real-world data research.”",
       "ja": "「処方と臨床アウトカムの間にエビデンスの基盤を築く——メタアナリシスからリアルワールドデータ研究へ。」"
     },
-    "updated": "2026-07-31"
+    "updated": "2026-09-30"
   }
 }
